@@ -1,6 +1,134 @@
 body{
   padding: 0;
   margin: 0;
-  background: linear-gradient(to right, #1e2342, #070a19);
+  background: linear-gradient(to right, #171a32, #070a19);
   height: 100vh;
+  overflow: hidden;
+
+  --mainImgScale: 50%;
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+#mainImgContainer{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+}
+
+#mainImgContainer #mainImg{
+  height: var(--mainImgScale);
+  margin-bottom: 40px;
+}
+
+#mainImgContainer #glowImg{
+  position: absolute;
+  z-index: -1;
+  height: var(--mainImgScale);
+  filter: blur(40px);
+  margin-bottom: 40px;
+}
+
+#circlesContainer{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.circle:nth-child(1){ height: 70%; top: calc(30% + (70% - var(--mainImgScale)) / 2 - 40px + 5%);}
+.circle:nth-child(2){ height: 85%; top: calc(15% + (85% - var(--mainImgScale)) / 2 - 40px + 5%); }
+.circle:nth-child(3){ height: 95%; top: calc(5% + (95% - var(--mainImgScale)) / 2 - 40px + 5%);}
+
+.circle{
+  border-radius: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 1;
+  position: absolute;
+}
+
+.circle::before{
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: calc(-50px / 2);
+  left: calc(50% - 50px / 2);
+  content: ' ';
+  background-color: red;
+  border-radius: 100%;
+}
+
+
+
+#header{
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#logo{
+  height: 70px;
+  width: auto;
+  filter: invert(100%);
+  opacity: 0.7;
+}
+
+.headerBtn{
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 3px;
+}
+
+
+
+#planetNameContainer{
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+#planetName{
+  font-weight: 500;
+  letter-spacing: 15px;
+  font-size: 50px;
+  margin: 0;
+  color: white;
+}
+
+#planetStatsContainer{
+  display: flex;
+}
+
+.stats{
+  margin: 0 25px;
+}
+
+.stats p:nth-child(1){
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 3px;
+}
+
+.stats p:nth-child(2){
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 3px;
+  font-weight: 500;
 }
