@@ -1,0 +1,22 @@
+{
+  "planets": [
+    {
+      "name": "EARTH",
+      "url": "Images/earth.png",
+      "weight": "1 EARTH",
+      "diameter": "12 742 KM",
+      "day": "24 HOURS",
+      "temperature": "15 °C",
+      "clrs": ["rgba(89, 147, 255, 0.4)", "rgba(36, 71, 138, 0.8)"]
+    },
+    {
+      "name": "MARS",
+      "url": "Images/moon3.png",
+      "weight": "0.64 EARTH",
+      "diameter": "6 779 KM",
+      "day": "24.6 HOURS",
+      "temperature": "-80 °C",
+      "clrs": ["rgb(255 89 138 / 40%)", "rgb(138 36 36 / 80%)"]
+    }
+  ]
+}
