@@ -8,6 +8,40 @@ body{
   --mainImgScale: 50%;
 }
 
+#starsBG{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+#glowBGContainer{
+  position: absolute;
+  inset: 0;
+}
+
+.glowBG{
+  position: absolute;
+  width: 25%;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  filter: blur(200px);
+  transition: background-color 0.25s;
+}
+
+.glowBG:nth-child(1){
+  background-color: rgba(89, 147, 255, 0.4);
+}
+
+.glowBG:nth-child(2){
+  background-color: rgba(36, 71, 138, 0.8);
+  right: 0;
+  bottom: 0;
+}
+
 *{
   font-family: 'Roboto', sans-serif;
 }
@@ -19,6 +53,7 @@ body{
   justify-content: center;
   align-items: end;
   position: relative;
+  transform-origin: center;
 }
 
 #mainImgContainer #mainImg{
@@ -43,6 +78,7 @@ body{
   position: absolute;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .circle:nth-child(1){ height: 70%; top: calc(30% + (70% - var(--mainImgScale)) / 2 - 40px + 5%);}
@@ -54,6 +90,8 @@ body{
   border: 2px solid rgba(255, 255, 255, 0.1);
   aspect-ratio: 1;
   position: absolute;
+  perspective: 500px;
+  transform-style: preserve-3d;
 }
 
 .circle::before{
@@ -64,9 +102,27 @@ body{
   top: calc(-50px / 2);
   left: calc(50% - 50px / 2);
   content: ' ';
-  background-color: red;
-  border-radius: 100%;
+  background-size: contain;
+  filter: blur(20px);
 }
+
+.circle::after{
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: calc(-50px / 2);
+  left: calc(50% - 50px / 2);
+  content: ' ';
+  background-size: contain;
+}
+
+.circle:nth-child(1)::before{ background-image: url("Images/moon1.png"); }
+.circle:nth-child(2)::before{ background-image: url("Images/moon2.png"); }
+.circle:nth-child(3)::before{ background-image: url("Images/moon3.png"); }
+.circle:nth-child(1)::after{ background-image: url("Images/moon1.png"); }
+.circle:nth-child(2)::after{ background-image: url("Images/moon2.png"); }
+.circle:nth-child(3)::after{ background-image: url("Images/moon3.png"); }
 
 
 
@@ -77,6 +133,8 @@ body{
   width: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  z-index: 1;
 }
 
 #logo{
@@ -84,13 +142,35 @@ body{
   width: auto;
   filter: invert(100%);
   opacity: 0.7;
+  transition: transform 0.15s;
+}
+
+#logo:hover{
+  cursor: pointer;
+  transform: scale(1.15);
+}
+#logo:active{
+  transform: scale(1.25);
 }
 
 .headerBtn{
   background: none;
   border: none;
   color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
   letter-spacing: 3px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  padding: 10px 30px;
+  transition: transform 0.15s, border 0.15s;
+}
+
+.headerBtn:hover{
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transform: scale(1.15);
+}
+.headerBtn:active{
+  transform: scale(1.25);
 }
 
 
@@ -131,4 +211,89 @@ body{
   color: rgba(255, 255, 255, 1);
   letter-spacing: 3px;
   font-weight: 500;
+}
+
+#exploreBtn{
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  backdrop-filter: 40px;
+  padding: 5px 20px;
+  margin-top: 25px;
+  transition: transform 0.15s;
+}
+
+#exploreBtn:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#exploreBtn:active{
+  transform: scale(1.25);
+}
+
+.material-symbols {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+#arrowsContainer{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow{
+  color: white;
+  font-size: 50px;
+  margin: 0 50px;
+  position: relative;
+  user-select: none; 
+  transition: transform 0.15s;
+}
+
+.arrow::before{
+  display: block;
+  content: ' ';
+  position: absolute;
+  top: -25px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.15);
+  z-index: -1;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.arrow:hover{
+  cursor: pointer;
+}
+.arrow:hover::before{
+  opacity: 1;
+  transform: scale(1);
+}
+.arrow:active{
+  transform: scale(1.2);
+}
+.arrow:active::before{
+  transform: scale(1.3);
 }

@@ -8,11 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
    <div id="mainImgContainer">
     <img id="mainImg" src="Images/earth.png" alt="mainImg">
     <img id="glowImg" src="Images/earth.png" alt="glowImg">
+   </div>
+   <img id="starsBG" src="Images/stars.png" alt="stars">
+   <div id="glowBGContainer">
+    <div class="glowBG"></div>
+    <div class="glowBG"></div>
    </div>
    <div id="circlesContainer">
     <div class="circle"></div>
@@ -26,26 +32,34 @@
     <button class="headerBtn">MARS</button>
     <button class="headerBtn">JUPITER</button>
    </div>
+   <div id="arrowsContainer">
+    <span onclick="prevPlanet()" class="material-symbols arrow">arrow_back_ios</span>
+    <span onclick="nextPlanet()" class="material-symbols arrow">arrow_forward_ios</span>
+   </div>
    <div id="planetNameContainer">
     <p id="planetName">EARTH</p>
     <div id="planetStatsContainer">
       <div class="stats">
         <p>WEIGHT</p>
-        <p>1 EARTH</p>
+        <p id="weightText">1 EARTH</p>
       </div>
       <div class="stats">
         <p>DIAMETER</p>
-        <p>1000 KM</p>
+        <p id="diameterText">1000 KM</p>
       </div>
       <div class="stats">
         <p>DAY LENGTH</p>
-        <p>24 HOURS</p>
+        <p id="dayText">24 HOURS</p>
       </div>
       <div class="stats">
         <p>AVG TEMPERATURE</p>
-        <p>20&#8451;</p>
+        <p id="temperatureText">20&#8451;</p>
       </div>
     </div>
+    <button id="exploreBtn">
+      EXPLORE
+    </button>
    </div>
+   <script src="index.js"></script>
 </body>
 </html>
