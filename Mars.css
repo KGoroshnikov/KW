@@ -1,0 +1,159 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #fdc380;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#parallaxContainer{
+  position: fixed;
+  width: 100vw;
+  height: auto;
+}
+
+#BGMARS{
+  width: 100%;
+  height: auto;
+}
+
+#GroundMars{
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+#groundFix{
+  z-index: 2;
+  left: 0;
+  top: 100%;
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  background-color: #ca4024;
+}
+
+#RockMars{
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  width: 80%;
+  height: auto;
+}
+
+#SunMars{
+  z-index: 1;
+  right: 10%;
+  top: 10%;
+  position: absolute;
+  width: 25%;
+  height: auto;
+}
+
+#BGTextContainer{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#BGTextContainer p:nth-child(1){
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  color: white;
+  margin: 0;
+}
+
+#BGTextContainer p:nth-child(2){
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  color: rgba(0, 0, 0, 0);
+  margin: 0;
+  -webkit-text-stroke: 3px white;
+  opacity: 0.8;
+  z-index: 5;
+}
+
+#BGTextContainer p:nth-child(3){
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  color: white;
+  margin: 0;
+  top: 100px;
+}
+
+#mainPageContainer{
+  position: absolute;
+  z-index: 4;
+  top: 100%;
+  background-color: #1e0633;
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url("Images/stars.png");
+  background-repeat: repeat;
+}
+
+#marsImg, #marsImg_bloom{
+  position: absolute;
+  height: 80%;
+  width: auto;
+  right: 0;
+  transform: translate(50%, 10%);
+  z-index: 6;
+}
+
+#marsImg_bloom{
+  z-index: 5;
+  filter: blur(20px);
+}
+
+#stats{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+#stats .spanImg{
+  font-size: 50px;
+  color: white;
+  max-width: 50px;
+  margin: 25px 25px 25px 10%;
+}
+
+.stat{
+  display: flex;
+  align-items: center;
+}
+
+.stat p{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.stat p span{
+  color: black;
+  font-weight: 700;
+  margin-left: 25px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}

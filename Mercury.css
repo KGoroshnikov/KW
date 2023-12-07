@@ -1,0 +1,47 @@
+body{
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to right, #2d261a, #180b03);
+}
+
+#background{
+  background-image: url("Images/stars.png");
+  background-size: 30%;
+  background-repeat: repeat;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#mainImgHolder{
+  position: absolute;
+  right: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+#Mercury, #Mercury_BLOOM{
+  position: absolute;
+  height: 55%;
+  right: 50px;
+  width: auto;
+  z-index: 1;
+}
+
+#Mercury_BLOOM{
+  filter: blur(20px);
+  z-index: 0;
+}
+
+#MercuryHALF{
+  position: absolute;
+  left: -10%;
+  bottom: -10%;
+  max-height: 60%;
+  width: auto;
+  z-index: 1;
+}

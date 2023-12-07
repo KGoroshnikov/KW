@@ -267,6 +267,7 @@ body{
   position: relative;
   user-select: none; 
   transition: transform 0.15s;
+  z-index: 10;
 }
 
 .arrow::before{

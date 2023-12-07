@@ -1,0 +1,143 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #06312a;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#starsBG{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+#mainPlanetContainer{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#mainPlanet{
+  height: 85%;
+  width: auto;
+}
+
+#mainPlanet_glow{
+  position: absolute;
+  height: 85%;
+  width: auto;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+#clouds{
+  height: 85%;
+  width: auto;
+  position: absolute;
+  z-index: 10;
+}
+
+#clouds_glow{
+  position: absolute;
+  height: 85%;
+  width: auto;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+#bushContainer{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+#bush1, #bush2, #bush1_shadow, #bush2_shadow{
+  position: absolute;
+  height: 110%;
+  z-index: 3;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+#bush1_shadow, #bush2_shadow{
+  filter: brightness(20%);
+  z-index: 2;
+}
+
+#BGTextContainer{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#BGTextContainer p:nth-child(1){
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  color: white;
+  margin: 0;
+}
+
+#BGTextContainer p:nth-child(2){
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  color: rgba(0, 0, 0, 0);
+  margin: 0;
+  -webkit-text-stroke: 3px white;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.location{
+  position: absolute;
+  width: 50px;
+  height: auto;
+  z-index: 1;
+  filter: invert(64%) sepia(80%) saturate(7383%) hue-rotate(341deg) brightness(96%) contrast(114%);
+}
+
+#maintip{
+  position: absolute;
+  width: 225px;
+  height: 110px;
+  background-color: #b5b567e8;
+  border: 3px solid #4b4b2b;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  color: #4b4b2b;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+#maintip p:nth-child(1){
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin: 0;
+  text-align: center;
+}
+
+#maintip p:nth-child(2){
+  max-width: 250px;
+  padding: 2px 15px;
+  margin: 0;
+}
