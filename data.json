@@ -19,22 +19,22 @@
       "clrs": ["rgb(255 89 138 / 40%)", "rgb(138 36 36 / 80%)"]
     },
     {
-      "name": "JUPITER",
-      "url": "Images/jupiter.png",
-      "weight": "318 EARTH",
-      "diameter": "140 000 KM",
-      "day": "10 HOURS",
-      "temperature": "-145 °C",
-      "clrs": ["rgb(255 208 89 / 40%)", "rgb(138 105 36 / 80%)"]
+      "name": "MERCURY",
+      "url": "Images/MERCURY/Mercury2.png",
+      "weight": "0.06 EARTH",
+      "diameter": "4 880 KM",
+      "day": "59 DAYS",
+      "temperature": "430 °C",
+      "clrs": ["rgb(249 124 1 / 50%)", "rgb(173 98 24 / 50%)"]
     },
     {
-      "name": "SUN",
-      "url": "Images/sun.png",
-      "weight": "333K EARTH",
-      "diameter": "1.4M KM",
-      "day": "-",
-      "temperature": "5 500 °C",
-      "clrs": ["rgb(249 124 1 / 50%)", "rgb(173 98 24 / 50%)"]
+      "name": "SATURN",
+      "url": "Images/SATURN/Saturn.png",
+      "weight": "95 EARTH",
+      "diameter": "120 536 KM",
+      "day": "10.5 HOURS",
+      "temperature": "-178 °C",
+      "clrs": ["rgb(255 208 89 / 40%)", "rgb(138 105 36 / 80%)"]
     }
   ]
 }

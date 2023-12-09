@@ -144,3 +144,7 @@ function isPointInsidePolygon(x, y, polygonVertices) {
 
   return isInside;
 }
+
+function loadPage(){
+  window.location.href = "index.html";
+}

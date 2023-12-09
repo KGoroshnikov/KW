@@ -9,8 +9,10 @@ var posesY = [0, 0, 0, 0, 0, 0];
 var windowHeight = window.innerHeight;
 var boxContainer = document.getElementById("parallaxContainer");
 
-window.addEventListener('wheel', function(event) {
-  var wheelDelta = event.deltaY;
+window.addEventListener('wheel', function(event) {movePage(event.deltaY)});
+
+function movePage(ddd){
+  var wheelDelta = ddd;
 
   for(let i = 0; i < speeds.length; i++){
     var newPosition = wheelDelta * -speeds[i];
@@ -36,7 +38,7 @@ window.addEventListener('wheel', function(event) {
       }
     }
   }
-});
+}
 
 window.onload = function(){
   startPoses = [254, 364, 364, 728, 182, 728];
@@ -50,3 +52,21 @@ window.onload = function(){
 function loadPage(){
   window.location.href = "index.html";
 }
+
+
+
+
+function touchEv(event){
+  wheelDelta = event.touches[0].clientY - touchStartY;
+  touchStartY = event.touches[0].clientY;
+  movePage(-wheelDelta);
+}
+
+var touchStartY;
+window.addEventListener('touchstart', function(event) {
+  touchStartY = event.touches[0].clientY;
+});
+window.addEventListener('touchmove', touchEv);
+window.addEventListener('touchend', function() {
+  touchStartY = undefined;
+});

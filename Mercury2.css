@@ -225,6 +225,10 @@ body{
   .citate{
     font-size: 12px;
   }
+  #logo{
+    width: 45px;
+    height: auto;
+  }
 }
 
 @media (max-width: 500px) {
@@ -233,6 +237,10 @@ body{
   }
   #BGTextContainer p:nth-child(2){
     font-size: 35px;
+  }
+  #logo{
+    width: 35px;
+    height: auto;
   }
 }
 

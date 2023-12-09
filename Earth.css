@@ -171,7 +171,32 @@ body{
   margin: 0;
 }
 
+#logo{
+  position: fixed;
+  z-index: 1000;
+  height: 55px;
+  width: auto;
+  filter: invert(100%);
+  transition: transform 0.15s;
+  top: 30px;
+  left: 30px;
+}
+
+#logo:hover{
+  cursor: pointer;
+  transform: scale(1.15);
+}
+#logo:active{
+  transform: scale(1.25);
+}
+
 @media (max-width: 500px) {
+
+  #logo{
+    top: 10px;
+    height: 40px;
+  }
+
   #maintip{
     width: 125px;
   }
@@ -182,6 +207,10 @@ body{
   #maintip p:nth-child(2) {
     max-width: 125px;
     font-size: 12px;
+  }
+
+  #BGTextContainer{
+    justify-content: end;
   }
 
   #BGTextContainer p:nth-child(1){
