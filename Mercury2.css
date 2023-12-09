@@ -7,7 +7,7 @@ body{
 
 #logo{
   position: fixed;
-  z-index: 5;
+  z-index: 5000;
   height: 70px;
   width: auto;
   filter: invert(100%);
@@ -166,6 +166,7 @@ body{
   align-items: center;
   justify-content: end;
   z-index: 100;
+  pointer-events: none;
 }
 
 #textContainer2 p{
