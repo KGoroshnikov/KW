@@ -27,6 +27,14 @@ window.addEventListener('wheel', function(event) {
         posesY[j] += newPosition;
       }
     }
+    else if(posesY[i] > 1688){
+      let d = posesY[i] - 1688;
+      for(let j = 0; j < speeds.length; j++){
+        var newPosition = -d * speeds[j];
+        layers[j].style.transform = 'translate(0, ' + (posesY[j] + newPosition) + 'px)';
+        posesY[j] += newPosition;
+      }
+    }
   }
 });
 

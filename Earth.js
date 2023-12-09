@@ -8,15 +8,34 @@ function openData() {
 }
 openData();
 
+
+var alignPlanet = document.getElementsByClassName("k");
+if (window.screen.width < window.screen.height){
+  for(let i = 0; i < alignPlanet.length; i++){
+    alignPlanet[i].classList.remove("alignbyheight");
+    alignPlanet[i].classList.add("alignbywidth");
+  }
+}
+
+
+var sideVal = 2;
+
+if (window.screen.width >= 1440) sideVal = 2;
+else if (window.screen.width >= 1200) sideVal = 1.7;
+else if (window.screen.width >= 1000) sideVal = 1.45;
+else sideVal = 1;
+
+var bushContainer = document.getElementById("bushContainer");
+
 var bushLeft = document.getElementsByClassName("bushLeft");
 for(let i = 0; i < bushLeft.length; i++){
-  bushLeft[i].style.left = -bushLeft[i].width / 2 + "px";
+  bushLeft[i].style.left = -bushLeft[i].width / sideVal + "px";
   bushLeft[i].style.top = -(bushLeft[i].height - window.innerHeight) / 2 + "px";
 }
 
 var bushRight = document.getElementsByClassName("bushRight");
 for(let i = 0; i < bushRight.length; i++){
-  bushRight[i].style.right = -bushRight[i].width / 2 + "px";
+  bushRight[i].style.right = -bushRight[i].width / sideVal + "px";
   bushRight[i].style.top = -(bushRight[i].height - window.innerHeight) / 2 + "px";
 }
 
@@ -74,6 +93,7 @@ var planetObj = document.getElementById("mainPlanet");
 var maintip = document.getElementById("maintip");
 var maintipName = document.getElementById("maintip-name");
 var maintipDescription = document.getElementById("maintip-description");
+var textTipRepeat = document.getElementById("textTipRepeat");
 var templateDiv = document.getElementsByClassName('location')[0];
 document.addEventListener('click', function (event) {
   var containerRect = planetObj.getBoundingClientRect();
@@ -106,6 +126,7 @@ document.addEventListener('click', function (event) {
   maintip.style.left = event.clientX + 20 + "px";
   maintipName.textContent = json.countries[type].name;
   maintipDescription.textContent = json.countries[type].description;
+  textTipRepeat.textContent = json.countries[type].description;
 });
 
 function isPointInsidePolygon(x, y, polygonVertices) {

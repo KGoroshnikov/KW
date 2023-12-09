@@ -4,6 +4,11 @@ body{
   background-color: #06312a;
   height: 100vh;
   overflow: hidden;
+
+  background-image: url("Images/stars.png");
+  background-repeat: repeat;
+  background-blend-mode:luminosity;
+  background-size: 70%;
 }
 
 #starsBG{
@@ -25,32 +30,31 @@ body{
   position: relative;
 }
 
-#mainPlanet{
-  height: 85%;
-  width: auto;
-}
-
 #mainPlanet_glow{
   position: absolute;
-  height: 85%;
-  width: auto;
   filter: blur(50px);
   z-index: -1;
 }
 
 #clouds{
-  height: 85%;
-  width: auto;
   position: absolute;
   z-index: 10;
 }
 
 #clouds_glow{
   position: absolute;
-  height: 85%;
-  width: auto;
   filter: blur(20px);
   z-index: -1;
+}
+
+.alignbyheight{
+  height: 85%;
+  width: auto;
+}
+
+.alignbywidth{
+  width: 85%;
+  height: auto;
 }
 
 #bushContainer{
@@ -80,6 +84,25 @@ body{
   display: flex;
   justify-content: center;
 }
+
+#textTipRepeatCONTAINER{
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+}
+
+#textTipRepeat{
+  opacity: 0.5;
+  font-family: 'Roboto', sans-serif;
+  max-width: 90%;
+  letter-spacing: 2px;
+  color: white;
+  text-align: center;
+}
+
 
 #BGTextContainer p:nth-child(1){
   font-family: 'Roboto', sans-serif;
@@ -111,10 +134,16 @@ body{
   filter: invert(64%) sepia(80%) saturate(7383%) hue-rotate(341deg) brightness(96%) contrast(114%);
 }
 
+#mainTipContainer{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
 #maintip{
   position: absolute;
   width: 225px;
-  height: 110px;
   background-color: #b5b567e8;
   border: 3px solid #4b4b2b;
   border-radius: 6px;
@@ -140,4 +169,26 @@ body{
   max-width: 250px;
   padding: 2px 15px;
   margin: 0;
+}
+
+@media (max-width: 500px) {
+  #maintip{
+    width: 125px;
+  }
+  #maintip p:nth-child(1){
+    max-width: 125px;
+    font-size: 12px;
+  }
+  #maintip p:nth-child(2) {
+    max-width: 125px;
+    font-size: 12px;
+  }
+
+  #BGTextContainer p:nth-child(1){
+    font-size: 50px;
+  }
+  
+  #BGTextContainer p:nth-child(2){
+    font-size: 50px;
+  }
 }

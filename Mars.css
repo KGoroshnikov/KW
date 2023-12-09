@@ -127,6 +127,9 @@ body{
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  position: absolute;
+  z-index: 1000;
+  left: 100px;
 }
 
 #stats .spanImg{
@@ -147,6 +150,7 @@ body{
   vertical-align: middle;
   font-weight: 500;
   font-size: 25px;
+  white-space: nowrap;
 }
 
 .stat p span{
@@ -156,4 +160,32 @@ body{
   background-color: white;
   border-radius: 10px;
   padding: 10px;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  #BGTextContainer p:nth-child(1) {
+    font-size: 50px;
+  }
+  #BGTextContainer p:nth-child(2) {
+    font-size: 50px;
+  }
+  #BGTextContainer p:nth-child(3) {
+    font-size: 30px;
+    top: 60px;
+  }
+  #stats{
+    left: 0px;
+  }
+}
+
+@media (max-width: 550px) {
+  #BGTextContainer p:nth-child(3) {
+    font-size: 17px;
+    top: 60px;
+    letter-spacing: 2px;
+  }
+  .stat p {
+    font-size: 16px;
+  }
 }

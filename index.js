@@ -160,3 +160,18 @@ function loadPlanet(){
     );
   }, 250);
 }
+
+
+
+
+var mobmenu = document.getElementById("burgerMenu");
+var mobileMenuOpened = false;
+function openMob(){
+  mobileMenuOpened = true;
+  mobmenu.style.display = "flex";
+}
+
+function closeMob(){
+  mobileMenuOpened = false;
+  mobmenu.style.display = "none";
+}
