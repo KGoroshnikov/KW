@@ -163,6 +163,26 @@ body{
   white-space: nowrap;
 }
 
+#logoContainer{
+  position: absolute;
+  top: 25px;
+  left: 50px;
+}
+
+#logo{
+  filter: invert(100%);
+  width: 50px;
+  height: auto;
+}
+
+#logo:hover{
+  cursor: pointer;
+  transform: scale(1.15);
+}
+#logo:active{
+  transform: scale(1.25);
+}
+
 @media (max-width: 700px) {
   #BGTextContainer p:nth-child(1) {
     font-size: 50px;
@@ -187,5 +207,10 @@ body{
   }
   .stat p {
     font-size: 16px;
+  }
+
+  #logoContainer{
+    top: 10px;
+    left: 10px;
   }
 }

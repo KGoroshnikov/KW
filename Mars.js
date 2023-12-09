@@ -45,3 +45,8 @@ window.onload = function(){
     posesY[i] = startPoses[i];
   }
 };
+
+
+function loadPage(){
+  window.location.href = "index.html";
+}

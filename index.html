@@ -27,11 +27,11 @@
     <div class="circle"></div>
    </div>
    <div id="header">
-    <button class="headerBtn">SUN</button>
-    <button class="headerBtn">EARTH</button>
-    <img id="logo" src="Images/galaxy.png" alt="icon">
-    <button class="headerBtn">MARS</button>
-    <button class="headerBtn">JUPITER</button>
+    <button onclick="loadPage(1)" class="headerBtn">EARTH</button>
+    <button onclick="loadPage(2)" class="headerBtn">MARS</button>
+    <img onclick="loadPage(0)" id="logo" src="Images/galaxy.png" alt="icon">
+    <button onclick="loadPage(3)" class="headerBtn">MERCURY</button>
+    <button onclick="loadPage(4)" class="headerBtn">SATURN</button>
     <span onclick="openMob()" class="matsymbols burger">menu</span>
    </div>
    <div id="arrowsContainer">
@@ -58,7 +58,7 @@
         <p id="temperatureText">20&#8451;</p>
       </div>
     </div>
-    <button id="exploreBtn">
+    <button onclick="explore()" id="exploreBtn">
       EXPLORE
     </button>
    </div>
@@ -67,10 +67,10 @@
     <p>MENU</p>
     <span onclick="closeMob()" class="matsymbols burgerClose">menu</span>
     <div id="mobileContainer">
-      <button class="mobileBtn">EARTH</button>
-      <button class="mobileBtn">MARS</button>
-      <button class="mobileBtn">MERCURY</button>
-      <button class="mobileBtn">JUPITER</button>
+      <button onclick="loadPage(1)" class="mobileBtn">EARTH</button>
+      <button onclick="loadPage(2)" class="mobileBtn">MARS</button>
+      <button onclick="loadPage(3)" class="mobileBtn">MERCURY</button>
+      <button onclick="loadPage(4)" class="mobileBtn">SATURN</button>
     </div>
    </div>
    <script src="index.js"></script>

@@ -1,221 +1,212 @@
 body{
-  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: black;
   margin: 0;
-  height: 100vh;
-  background: linear-gradient(to right, #2d261a, #180b03);
-  overflow-x: hidden;
+  padding: 0;
 }
 
-#background{
-  background-image: url("Images/stars.png");
-  background-size: 30%;
-  background-repeat: repeat;
+#BGTextContainer{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
 
+#BGTextContainer p:nth-child(1){
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  color: white;
+  margin: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+#BGTextContainer p:nth-child(2){
+  position: fixed;
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  color: rgba(0, 0, 0, 0);
+  margin: 0;
+  -webkit-text-stroke: 3px white;
+  opacity: 0.8;
+  z-index: 5;
+}
+
+#mainImgContainer{
   position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#mainImgHolder{
-  position: absolute;
-  right: 0;
+  height: 100vh;
   display: flex;
-  height: 100%;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-#Mercury, #Mercury_BLOOM{
-  position: absolute;
-  height: 75%;
-  right: 50px;
-  width: auto;
-  z-index: 1;
-}
-
-#Mercury_BLOOM{
-  filter: blur(40px);
   z-index: 0;
 }
 
-#MercuryHALF{
+#mainImg{
+  width: 100%;
+}
+
+#mainImgBLOOM{
   position: absolute;
-  left: -10%;
-  bottom: -20%;
-  height: 100%;
-  width: auto;
-  z-index: 1;
-  transform: rotate(135deg);
+  width: 100%;
+  filter: blur(100px);
+  z-index: -1;
 }
 
-#glowBGContainer{
-  position: absolute;
-  inset: 0;
-}
-
-.glowBG{
-  position: absolute;
-  width: 25%;
-  aspect-ratio: 1;
-  border-radius: 100%;
-  filter: blur(200px);
-  transition: background-color 0.25s;
-}
-
-.glowBG:nth-child(1){
-  background-color: rgba(255, 189, 89, 0.4);
-}
-
-.glowBG:nth-child(2){
-  background-color: rgba(138, 101, 36, 0.8);
-  right: 0;
-  bottom: 0;
-}
-
-#UIOverlay{
-  position: absolute;
-  z-index: 5;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 45%);
-  display: flex;
-  justify-content: end;
-}
-
-.uiButton{
-  height: 100%;
-  width: 25%;
-  background-color: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(0px);
-  transition: background-color 0.2s, backdrop-filter 0.2s, border-right 0.2s, border-left 0.2s;
-  display: grid;
-  grid-template-columns: 100%;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.uiButton:hover{
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-  border-right: 1px solid rgba(255, 255, 255, 0.25);
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.uiButton:hover .nBtn{
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.uiButton:hover .name{
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.uiButton:hover .description{
-  transform: translateY(0px);
-  opacity: 1;
-}
-
-.uiButton:hover .btnName{
-  transform: translateY(20px);
-}
-
-.uiButton:hover .btnDescription{
-  transform: translateY(10px);
-}
-
-.btnInfo{
-  align-self: end;
-  margin-bottom: 50px;
-}
-
-.name{
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  color: white;
-  font-size: 50px;
-  letter-spacing: 10px;
-  font-weight: 400;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.description{
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  color: white;
-  font-size: 18px;
-  font-weight: 400;
-  text-align: justify;
-  max-width: 90%;
-  opacity: 0.7;
-  justify-self: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.btnName{
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  color: white;
-  font-size: 18px;
+#citate{
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
   letter-spacing: 5px;
-  font-weight: 400;
+  text-align: center;
+  margin-top: 50px;
+  max-width: 50%;
+}
+
+#mainContent{
+  margin-top: 250px;
   width: 100%;
-  margin-bottom: 35px;
-  transform: translateY(0px);
-  transition: transform 0.2s;
-}
-
-.btnDescription{
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
   color: white;
-  font-size: 16px;
-  letter-spacing: 3px;
-  font-weight: 400;
-  width: 100%;
-  opacity: 0.6;
-  transform: translateY(0px);
-  transition: transform 0.2s;
+  letter-spacing: 5px;
 }
 
-.nBtn{
-  width: 200px;
-  height: 200px;
-  background: none;
-  border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.01);
-  backdrop-filter: blur(200px);
-  border-radius: 100%;
-  justify-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  opacity: 0;
-  transform: translateY(-30px);
-  transition: transform 0.2s, opacity 0.2s;
+.section{
+  display: flex; 
+  min-height: 400px;
+  margin-top: 100px;
 }
 
-.nBtn p{
-  font-family: 'Roboto', sans-serif;
+.leftSide{
+  width: 50%;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 20px 50px;
+}
+.sideHeaderText{
+  font-size: 40px;
   margin: 0;
-  color: white;
-  font-size: 100px;
-  font-weight: 700;
+  margin-left: 20%;
+  letter-spacing: 30px;
 }
 
-#menu{
-  position: absolute;
-  top: 30px;
-  left: 30px;
+.rightSide{
+  width: 50%;
+  padding: 20px 50px;
+}
+
+.rightText{
+  margin: 0;
 }
 
 #logo{
-  width: 80px;
-  height: auto;
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  height: 70px;
+  width: auto;
   filter: invert(100%);
+  opacity: 0.7;
+  transition: transform 0.15s;
+}
+
+#logo:hover{
+  cursor: pointer;
+  transform: scale(1.15);
+}
+#logo:active{
+  transform: scale(1.25);
+}
+
+@media (max-width: 1300px) {
+  .sideHeaderText{
+    margin-left: 2%;
+    font-size: 25px;
+    letter-spacing: 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  .sideHeaderText{
+    margin-left: 2%;
+    font-size: 25px;
+    letter-spacing: 15px;
+  }
+  .leftSide{
+    padding: 20px 10px;
+  }
+  #BGTextContainer p:nth-child(1){
+    font-size: 50px;
+    letter-spacing: 20px;
+  }
+  #BGTextContainer p:nth-child(2){
+    font-size: 50px;
+    letter-spacing: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sideHeaderText{
+    margin-left: 2%;
+    font-size: 18px;
+    letter-spacing: 5px;
+  }
+  .leftSide{
+    padding: 20px 5px;
+  }
+  .rightSide{
+    padding: 20px 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  #BGTextContainer{
+    justify-content: end;
+    top: 30px;
+    right: 30px;
+  }
+  .rightText{
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .sideHeaderText{
+    letter-spacing: 1px;
+  }
+  #BGTextContainer p:nth-child(1){
+    font-size: 35px;
+    letter-spacing: 15px;
+  }
+  #BGTextContainer p:nth-child(2){
+    font-size: 35px;
+    letter-spacing: 15px;
+  }
+  .section{
+    display: flex; 
+    flex-direction: column;
+  }
+  .leftSide, .rightSide{
+    width: 90%;
+    border: none;
+  }
+
+  #citate{
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 350px) {
+  #BGTextContainer p:nth-child(1){
+    font-size: 22px;
+    letter-spacing: 5px;
+    font-weight: 400;
+  }
+  #BGTextContainer p:nth-child(2){
+    font-size: 22px;
+    letter-spacing: 5px;
+    font-weight: 400;
+  }
 }

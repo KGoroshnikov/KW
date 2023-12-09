@@ -175,3 +175,16 @@ function closeMob(){
   mobileMenuOpened = false;
   mobmenu.style.display = "none";
 }
+
+function loadPage(idx){
+  if (idx == 0) window.location.href = "index.html";
+  else if (idx == 1) window.location.href = "Earth.html";
+  else if (idx == 2) window.location.href = "Mars.html";
+  else if (idx == 3) window.location.href = "Mercury2.html";
+  else if (idx == 4) window.location.href = "Saturn.html";
+}
+
+function explore(){
+  console.log(currentImg);
+  loadPage(currentImg + 1);
+}
