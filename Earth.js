@@ -113,9 +113,6 @@ document.addEventListener('click', function (event) {
   var clonedDiv = templateDiv.cloneNode(true);
   clonedDiv.style.display = "block";
 
-  arr.push([parseInt(percentageX.toFixed(2)), parseInt(percentageY.toFixed(2))]);
-  console.log(arr);
-
   clonedDiv.style.left = event.clientX - (templateDiv.width / 2) + 'px';
   clonedDiv.style.top = event.clientY - templateDiv.height + 'px';
 

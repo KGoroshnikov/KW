@@ -120,45 +120,33 @@ function rotateMoons(){
     canClick = true;
   }, 250);
 }
-
-
 function loadPlanet(){
   var anim = mainImg.animate(
     [{ transform: 'rotateZ(' + 0 + 'deg)', filter: "blur(0)" },
-     { transform: 'rotateZ(' + 90 + 'deg)', filter: "blur(20px)" }],
-    {
+     { transform: 'rotateZ(' + 90 + 'deg)', filter: "blur(20px)" }], {
       fill: "forwards",
       easing: "ease",
       duration: 250,
-    }
-  );
-
+    });
   setTimeout(() => {
     randMoons();
     mainImg.src = preloadedImages[currentImg].src;
     glowImg.src = preloadedImages[currentImg].src;
-
-    for(let i = 0; i < glows.length; i++){
-      glows[i].style.backgroundColor = json.planets[currentImg].clrs[i];
-    }
-
+    for(let i = 0; i < glows.length; i++){ glows[i].style.backgroundColor = json.planets[currentImg].clrs[i]; }
     planetName.textContent = json.planets[currentImg].name;
     weightText.textContent = json.planets[currentImg].weight;
     diameterText.textContent = json.planets[currentImg].diameter;
     dayText.textContent = json.planets[currentImg].day;
     temperatureText.textContent = json.planets[currentImg].temperature;
     rotateMoons();
-
     var anim2 = mainImg.animate(
       [{ transform: 'rotateZ(' + 90 + 'deg)', filter: "blur(20px)" },
-       { transform: 'rotateZ(' + 0 + 'deg)', filter: "blur(0)" }],
-      {
+       { transform: 'rotateZ(' + 0 + 'deg)', filter: "blur(0)" }], {
         fill: "forwards",
         easing: "ease",
         duration: 250,
-      }
-    );
-  }, 250);
+      });
+}, 250);
 }
 
 

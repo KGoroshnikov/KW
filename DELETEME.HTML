@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная</title>
+  <title>Document</title>
   <link rel="stylesheet" href="index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<link rel="shortcut icon" type="image/x-icon" href="Images/favicon.ico" />
+
 </head>
 <body>
    <div id="mainImgContainer">
@@ -25,14 +25,6 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
-   </div>
-   <div id="header">
-    <button onclick="loadPage(1)" class="headerBtn">EARTH</button>
-    <button onclick="loadPage(2)" class="headerBtn">MARS</button>
-    <img onclick="loadPage(0)" id="logo" src="Images/galaxy.png" alt="icon">
-    <button onclick="loadPage(3)" class="headerBtn">MERCURY</button>
-    <button onclick="loadPage(4)" class="headerBtn">SATURN</button>
-    <span onclick="openMob()" class="matsymbols burger">menu</span>
    </div>
    <div id="arrowsContainer">
     <span onclick="prevPlanet()" class="material-symbols arrow">arrow_back_ios</span>
@@ -62,16 +54,17 @@
       EXPLORE
     </button>
    </div>
-   <div id="burgerMenu">
-    <p>MENU</p>
-    <span onclick="closeMob()" class="matsymbols burgerClose">menu</span>
-    <div id="mobileContainer">
-      <button onclick="loadPage(1)" class="mobileBtn">EARTH</button>
-      <button onclick="loadPage(2)" class="mobileBtn">MARS</button>
-      <button onclick="loadPage(3)" class="mobileBtn">MERCURY</button>
-      <button onclick="loadPage(4)" class="mobileBtn">SATURN</button>
-    </div>
-   </div>
+
+
+   <header id="header">
+    <button onclick="loadPage(1)" class="headerBtn">EARTH</button>
+    <button onclick="loadPage(2)" class="headerBtn">MARS</button>
+    <img onclick="loadPage(0)" id="logo" src="Images/galaxy.png" alt="icon">
+    <button onclick="loadPage(3)" class="headerBtn">MERCURY</button>
+    <button onclick="loadPage(4)" class="headerBtn">SATURN</button>
+    <span onclick="openMob()" class="matsymbols burger">menu</span>
+   </header>
+
    <footer>
     <div id="footLeft">
       <p class="cont">ABOUT US</p>
