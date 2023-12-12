@@ -17,27 +17,27 @@ if (window.screen.width < window.screen.height){
   }
 }
 
-
-var sideVal = 2;
-
-if (window.screen.width >= 1440) sideVal = 2;
-else if (window.screen.width >= 1200) sideVal = 1.7;
-else if (window.screen.width >= 1000) sideVal = 1.45;
-else sideVal = 1;
-
-var bushContainer = document.getElementById("bushContainer");
-
-var bushLeft = document.getElementsByClassName("bushLeft");
-for(let i = 0; i < bushLeft.length; i++){
-  bushLeft[i].style.left = -bushLeft[i].width / sideVal + "px";
-  bushLeft[i].style.top = -(bushLeft[i].height - window.innerHeight) / 2 + "px";
+function alignBushes(){
+  var sideVal = 2;
+  if (window.screen.width >= 1440) sideVal = 2;
+  else if (window.screen.width >= 1200) sideVal = 1.7;
+  else if (window.screen.width >= 1000) sideVal = 1.45;
+  else sideVal = 1;
+  var bushContainer = document.getElementById("bushContainer");
+  var bushLeft = document.getElementsByClassName("bushLeft");
+  for(let i = 0; i < bushLeft.length; i++){
+    bushLeft[i].style.left = -bushLeft[i].width / sideVal + "px";
+    bushLeft[i].style.top = -(bushLeft[i].height - window.innerHeight) / 2 + "px";
+  }
+  var bushRight = document.getElementsByClassName("bushRight");
+  for(let i = 0; i < bushRight.length; i++){
+    bushRight[i].style.right = -bushRight[i].width / sideVal + "px";
+    bushRight[i].style.top = -(bushRight[i].height - window.innerHeight) / 2 + "px";
+  }
 }
 
-var bushRight = document.getElementsByClassName("bushRight");
-for(let i = 0; i < bushRight.length; i++){
-  bushRight[i].style.right = -bushRight[i].width / sideVal + "px";
-  bushRight[i].style.top = -(bushRight[i].height - window.innerHeight) / 2 + "px";
-}
+setTimeout(() => {alignBushes();}, 500);
+setTimeout(() => {alignBushes();}, 1000);
 
 var active = false;
 setTimeout(() => {active = true}, 500);
