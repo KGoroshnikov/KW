@@ -129,7 +129,6 @@ body{
     letter-spacing: 15px;
   }
 }
-
 @media (max-width: 800px) {
   .sideHeaderText{
     margin-left: 2%;
@@ -139,32 +138,36 @@ body{
   .leftSide{
     padding: 20px 10px;
   }
-  #BGTextContainer p:nth-child(1){
-    font-size: 50px;
-    letter-spacing: 20px;
-  }
+  #BGTextContainer p:nth-child(1),
   #BGTextContainer p:nth-child(2){
     font-size: 50px;
     letter-spacing: 20px;
   }
 }
-
 @media (max-width: 700px) {
   .sideHeaderText{
     margin-left: 2%;
     font-size: 18px;
     letter-spacing: 5px;
   }
-  .leftSide{
+  .leftSide, .rightSide{
     padding: 20px 5px;
   }
-  .rightSide{
-    padding: 20px 5px;
-  }
-
   #logo{
     width: 45px;
     height: auto;
+  }
+}
+@media (max-width: 350px) {
+  #BGTextContainer p:nth-child(1){
+    font-size: 22px;
+    letter-spacing: 5px;
+    font-weight: 400;
+  }
+  #BGTextContainer p:nth-child(2){
+    font-size: 22px;
+    letter-spacing: 5px;
+    font-weight: 400;
   }
 }
 
@@ -181,11 +184,7 @@ body{
   .sideHeaderText{
     letter-spacing: 1px;
   }
-  #BGTextContainer p:nth-child(1){
-    font-size: 35px;
-    letter-spacing: 15px;
-  }
-  #BGTextContainer p:nth-child(2){
+  #BGTextContainer p:nth-child(1), #BGTextContainer p:nth-child(2){
     font-size: 35px;
     letter-spacing: 15px;
   }
@@ -205,18 +204,5 @@ body{
   #logo{
     width: 35px;
     height: auto;
-  }
-}
-
-@media (max-width: 350px) {
-  #BGTextContainer p:nth-child(1){
-    font-size: 22px;
-    letter-spacing: 5px;
-    font-weight: 400;
-  }
-  #BGTextContainer p:nth-child(2){
-    font-size: 22px;
-    letter-spacing: 5px;
-    font-weight: 400;
   }
 }

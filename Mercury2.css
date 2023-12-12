@@ -182,7 +182,6 @@ body{
     max-width: 50%;
   }
 }
-
 @media (max-width: 950px) {
   #textContainer1 p{
     max-width: 50%;
@@ -191,23 +190,16 @@ body{
   #textContainer2 p{
     font-size: 16px;
   }
-
-  #BGTextContainer p:nth-child(1){
-    font-size: 70px;
-  }
+  #BGTextContainer p:nth-child(1),
   #BGTextContainer p:nth-child(2){
     font-size: 70px;
   }
 }
-
 @media (max-width: 700px) {
-  #BGTextContainer p:nth-child(1){
-    font-size: 50px;
-  }
+  #BGTextContainer p:nth-child(1),
   #BGTextContainer p:nth-child(2){
     font-size: 50px;
   }
-
   #BGTextContainer{
     top: 30px;
     justify-content: end;

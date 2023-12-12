@@ -423,33 +423,26 @@ footer{
   #header{
     justify-content: end;
   }
-
   #planetNameContainer{
     top: 70px;
   }
-
   #planetStatsContainer{
     flex-wrap: wrap;
     height: 250px;
   }
-
   .stats{
     height: auto;
   }
-
   .stats p{
     font-size: 12px;
   }
-
   #arrowsContainer{
     align-items: end;
   }
-
   .arrow{
     margin-bottom: 200px;
   }
 }
-
 @media (max-width: 550px) {
   .arrow {
     margin-bottom: 100px;
